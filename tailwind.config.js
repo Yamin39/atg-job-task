@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         "ibm-plex-sans": `"IBM Plex Sans", serif`,
       },
+      screens: {
+        "2md": "920px",
+      },
     },
   },
   plugins: [],

@@ -1,9 +1,8 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import arrowBackIcon from "../../assets/icons/arrow-back.svg";
 import banner from "../../assets/images/banner.jpeg";
 
-const Banner = () => {
-  const [isJoinGroup, setIsJoinGroup] = useState(false);
+const Banner = ({ isJoinGroup, setIsJoinGroup }) => {
   return (
     <section style={{ backgroundImage: `url(${banner})` }} className="bg-cover bg-center bg-no-repeat h-[236px] md:h-[27.5rem]">
       <div style={{ background: "linear-gradient(180.00deg, rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.6) 100%)" }} className="size-full">

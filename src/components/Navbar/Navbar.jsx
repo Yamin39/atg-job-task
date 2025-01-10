@@ -5,12 +5,12 @@ import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="max-w-[1296px] w-full md:w-[90%] mx-auto py-[0.4375rem] pr-3 md:pr-0 md:pt-4 md:pb-[0.875rem] flex justify-end md:justify-between items-center">
-      <div className="max-w-[10.125rem] hidden md:block">
+    <nav className="max-w-[1296px] w-full 2md:w-[90%] mx-auto py-[0.4375rem] pr-3 2md:pr-0 2md:pt-4 2md:pb-[0.875rem] flex justify-end 2md:justify-between items-center">
+      <div className="max-w-[10.125rem] hidden 2md:block">
         <img src={logo} className="w-full object-cover" alt="Logo" />
       </div>
 
-      <form className="px-[0.875rem] py-[0.625rem] w-full max-w-[22.5rem] gap-[0.875rem] bg-[#F2F2F2] hidden md:flex items-center rounded-full">
+      <form className="px-[0.875rem] py-[0.625rem] w-full max-w-[22.5rem] gap-[0.875rem] bg-[#F2F2F2] hidden 2md:flex items-center rounded-full">
         <img className="max-w-[1.375rem] object-cover" src={searchIcon} alt="Search Icon" />
         <input
           type="search"
@@ -19,7 +19,7 @@ const Navbar = () => {
         />
       </form>
 
-      <button className="hidden md:flex items-center">
+      <button className="hidden 2md:flex items-center">
         <p className="font-medium text-[#2E2E2E]">
           Create account. <span className="font-bold text-[#2F6CE5]">It’s free!</span>
         </p>
@@ -28,7 +28,7 @@ const Navbar = () => {
         </div>
       </button>
 
-      <button className="md:hidden">
+      <button className="2md:hidden">
         <img src={mobileNavIcons} className="max-w-[3.1875rem]" alt="Mobile Nav Icons" />
       </button>
     </nav>
