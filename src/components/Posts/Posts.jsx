@@ -107,11 +107,15 @@ const Posts = () => {
             <p className="text-sm leading-[18px] tracking-[10%] capitalize">RECOMMENDED GROUPS</p>
           </div>
 
-          <ul className="space-y-[22px]">
+          <ul className="space-y-[22px] mb-[54px]">
             {groups.map((group, index) => (
               <GroupLi key={index} img={group.img} name={group.name}></GroupLi>
             ))}
           </ul>
+
+          <div className="flex justify-end">
+            <button className="text-xs leading-4 text-[#2F6CE5]">See More...</button>
+          </div>
         </div>
       </div>
     </div>
