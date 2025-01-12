@@ -12,7 +12,15 @@ const Home = () => {
   const [user, setUser] = useState(false);
   return (
     <div className="font-ibm-plex-sans pb-5 sm:pb-[98px]">
-      <Navbar user={user} setUser={setUser} setIsModalOpen={setIsModalOpen}></Navbar>
+      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.12)]">
+        <Navbar user={user} setUser={setUser} setIsModalOpen={setIsModalOpen}></Navbar>
+      </header>
+
+      {/* dummy nav to hold the fixed space for nav */}
+      <div className="invisible">
+        <Navbar user={user} setUser={setUser} setIsModalOpen={setIsModalOpen}></Navbar>
+      </div>
+
       <Banner isJoinGroup={isJoinGroup} setIsJoinGroup={setIsJoinGroup}></Banner>
       <Filter isJoinGroup={isJoinGroup} setIsJoinGroup={setIsJoinGroup}></Filter>
       <Posts></Posts>
