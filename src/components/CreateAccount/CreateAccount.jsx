@@ -11,7 +11,7 @@ import modalImg from "../../assets/images/login-modal.jpg";
 const CreateAccount = ({ setUser, setIsModalOpen, setAuthPage }) => {
   const [eyeToggle, setEyeToggle] = useState(false);
   return (
-    <div className="relative bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.25)] rounded-[8px_8px_0px_0px] md:rounded-[8px_8px_8px_8px]">
+    <div className="w-full md:w-fit relative bg-white shadow-[0px_8px_24px_0px_rgba(0,0,0,0.25)] rounded-[8px_8px_0px_0px] md:rounded-[8px_8px_8px_8px]">
       {/* close modal */}
       <button onClick={() => setIsModalOpen(false)} className="absolute top-6 md:-top-10 right-[22px] md:-right-4 size-5 md:size-6">
         <img src={closeIcon} className="hidden md:block size-full" alt="Close Icon" />
@@ -36,7 +36,7 @@ const CreateAccount = ({ setUser, setIsModalOpen, setAuthPage }) => {
         </div>
 
         <div className="flex justify-between h-min gap-6">
-          <div className="md:w-[48.2%]">
+          <div className="w-full md:w-[48.2%]">
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-2">
                 {/* first name */}
