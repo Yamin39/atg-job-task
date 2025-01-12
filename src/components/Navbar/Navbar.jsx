@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import arrowDown from "../../assets/icons/arrow-down.svg";
 import mobileNavIcons from "../../assets/icons/mobile-nav-icons.svg";
 import searchIcon from "../../assets/icons/search.png";
+import userImg from "../../assets/images/joseph-gray.png";
 import logo from "../../assets/images/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ user, setUser, setIsModalOpen }) => {
   return (
     <nav className="max-w-[1296px] w-full 2md:w-[90%] mx-auto py-[0.4375rem] pr-3 2md:pr-0 2md:pt-4 2md:pb-[0.875rem] flex justify-end 2md:justify-between items-center">
       <div className="max-w-[10.125rem] hidden 2md:block">
@@ -19,17 +21,27 @@ const Navbar = () => {
         />
       </form>
 
-      <button className="hidden 2md:flex items-center">
-        <p className="font-medium text-[#2E2E2E]">
-          Create account. <span className="font-bold text-[#2F6CE5]">It’s free!</span>
-        </p>
-        <div className="px-[0.4375rem]">
-          <img src={arrowDown} alt="Arrow Down" />
+      {!user ? (
+        <button onClick={() => setIsModalOpen(true)} className="hidden 2md:flex items-center">
+          <p className="font-medium text-[#2E2E2E]">
+            Create account. <span className="font-bold text-[#2F6CE5]">It’s free!</span>
+          </p>
+          <div className="px-[0.4375rem]">
+            <img src={arrowDown} alt="Arrow Down" />
+          </div>
+        </button>
+      ) : (
+        <div className="flex items-center">
+          <img src={userImg} className="size-9 mr-3" alt="User Image" />
+          <button onClick={() => setUser(false)} className="flex items-center">
+            <p className="text-[14px] leading-[18px]">Siddharth Goyal</p>
+            <img src={arrowDown} className="ml-2.5 w-[9.17px]" alt="Arrow Down" />
+          </button>
         </div>
-      </button>
+      )}
 
-      <button className="2md:hidden">
-        <img src={mobileNavIcons} className="max-w-[3.1875rem]" alt="Mobile Nav Icons" />
+      <button onClick={() => setIsModalOpen(true)} className="2md:hidden">
+        {!user && <img src={mobileNavIcons} className="max-w-[3.1875rem]" alt="Mobile Nav Icons" />}
       </button>
     </nav>
   );
