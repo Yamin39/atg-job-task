@@ -5,10 +5,12 @@ import CreateAccount from "../components/CreateAccount/CreateAccount";
 import Filter from "../components/Filter/Filter";
 import Navbar from "../components/Navbar/Navbar";
 import Posts from "../components/Posts/Posts";
+import SignIn from "../components/SignIn/SignIn";
 
 const Home = () => {
   const [isJoinGroup, setIsJoinGroup] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [authPage, setAuthPage] = useState("Create Account");
   const [user, setUser] = useState(false);
   return (
     <div className="font-ibm-plex-sans pb-5 sm:pb-[98px]">
@@ -34,10 +36,14 @@ const Home = () => {
       </button>
 
       {/* modal */}
-      <div className={`fixed top-0 left-0 w-full h-full flex justify-center items-center ${isModalOpen ? "block" : "hidden"}`}>
+      <div className={`fixed z-[99999] top-0 left-0 w-full h-full flex justify-center items-center ${isModalOpen ? "block" : "hidden"}`}>
         <div className="absolute size-full bg-black opacity-60"></div>
         <div className="absolute size-full flex justify-center items-end md:items-center">
-          <CreateAccount setUser={setUser} setIsModalOpen={setIsModalOpen}></CreateAccount>
+          {authPage === "Create Account" ? (
+            <CreateAccount setUser={setUser} setIsModalOpen={setIsModalOpen} setAuthPage={setAuthPage}></CreateAccount>
+          ) : (
+            <SignIn setUser={setUser} setIsModalOpen={setIsModalOpen} setAuthPage={setAuthPage}></SignIn>
+          )}
         </div>
       </div>
     </div>
